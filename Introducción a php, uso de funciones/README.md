@@ -63,6 +63,25 @@ Implementa una función __sumaDigitos(int $n): int__ que calcule la suma de los 
 
 > Ejemplo: `2025` → `9` (2+0+2+5)
 
+```php
+<?php
+    declare(strict_types=1);
+    function sumaDigitos(int $n): int{
+        $numeroStr = (String) $n;
+        $array = str_split($numeroStr);
+        $suma = 0;
+        $tamanio = count($array);
+        for ($i=0; $i < $tamanio ; $i++) { 
+            $numero = (int) $array[$i];
+            $suma += $numero;
+        }
+        return $suma;
+    }
+
+    echo sumaDigitos(2025);
+?>
+```
+
 ## Número secreto (múltiplos de 3 o 5)
 
 Implementa una función __multiplosTresOCinco(int $n): array__ que devuelva todos los múltiplos de 3 o 5 menores que `N`.

@@ -8,17 +8,15 @@ Implementa una función __esCapicua(int $n): bool__ que determine si un número 
 
 ```php
 <?php
-    declare(strict_types=1);
-    function esCapicua(int $n):String{
-        $numero1 = (string) $n;
-        $numero2 = strrev($numero1);
-        if($numero2 == $numero1){
-            return "true";
-        } 
-        return "false";
-    }
-    echo esCapicua(12345) . "\n";
-    echo esCapicua(12321) . "\n";
+declare(strict_types=1);
+
+function esCapicua(int $n): bool {
+    $numeroStr = (string) $n;
+    return $numeroStr === strrev($numeroStr);
+}
+
+var_dump(esCapicua(12345));
+var_dump(esCapicua(12321));
 ?>
 ```
 
@@ -82,6 +80,23 @@ Implementa una función __sumaDigitos(int $n): int__ que calcule la suma de los 
 ?>
 ```
 
+Forma optima
+```php
+<?php
+declare(strict_types=1);
+function sumaDigitos(int $n): int {
+    $suma = 0;
+    while ($n > 0) {
+        $suma += $n % 10;
+        $n = intdiv($n, 10);
+    }
+    return $suma;
+}
+
+echo sumaDigitos(2025);
+?>
+```
+
 ## Número secreto (múltiplos de 3 o 5)
 
 Implementa una función __multiplosTresOCinco(int $n): array__ que devuelva todos los múltiplos de 3 o 5 menores que `N`.
@@ -93,6 +108,41 @@ Implementa una función __multiplosTresOCinco(int $n): array__ que devuelva todo
 ```code
 3, 5, 6, 9
 Suma = 23
+```
+
+```php
+<?php
+    declare(strict_types=1);
+    function multiplosTresOCinco(int $n): array{
+        $array = [];
+        for ($i=1; $i < $n ; $i++) { 
+            if ($i % 3 == 0 || $i % 5 == 0) {
+                $array[] = $i;
+            }
+        }
+        return $array;
+    }
+
+    $multiplos = multiplosTresOCinco(10);
+    echo implode(", ", $multiplos) . "\n";
+    echo "Suma = " . array_sum($multiplos) . "\n";
+?>
+```
+Forma optima
+
+```php
+<?php
+declare(strict_types=1);
+
+$n = 10;
+
+$numeros = range(1, $n - 1);
+
+$multiplos = array_filter($numeros, fn($x) => $x % 3 === 0 || $x % 5 === 0);
+
+echo implode(", ", $multiplos) . "\n";       
+echo "Suma = " . array_sum($multiplos) . "\n";
+?>
 ```
 
 ## Secuencia de Collatz

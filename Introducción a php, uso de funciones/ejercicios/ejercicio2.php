@@ -1,15 +1,21 @@
 <?php
-    declare(strict_types=1);
-    function montañaAsteriscos(int $n, $m): void{
-        $altura = $n *$m;
-        for ($i=1; $i < $altura ; $i++) { 
-            $izquierda = str_repeat("*", $i);
-            $espacios = str_repeat(" ", $altura - ($i * 2) );
-            $derecha = str_repeat("*",$i);
+declare(strict_types=1);
+function montañaAsteriscos(int $altura, int $repeticiones): void {
+    for ($i = 1; $i <= $altura; $i++) {
+        $linea = "";
+        $espacios = ($altura - $i) * 2;
 
-            echo $izquierda . $espacios . $derecha . "\n";
+        for ($j = 1; $j <= $repeticiones; $j++) {
+            if ($j % 2 == 0) { 
+                $linea .= str_repeat(" ", $espacios) . str_repeat("*", $i);
+            } else {           
+                $linea .= str_repeat("*", $i);
+            }
         }
-    }
 
-    montañaAsteriscos(4,2);
+        echo $linea . "\n";
+    }
+}
+
+montañaAsteriscos(4, 3);
 ?>

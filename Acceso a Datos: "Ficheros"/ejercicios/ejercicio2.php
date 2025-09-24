@@ -6,4 +6,5 @@
     }
     rewind($file);
     echo fread($file, filesize($ruta));
+    fclose($file);
 ?>

@@ -1,5 +1,5 @@
 <?php
-    $ruta= "ficheros.tabla5.txt";
+    $ruta= "ficheros/tabla5.txt";
     $file = fopen($ruta, "w+");
     $multiplicacion = 0;
     for ($i=1; $i <=10; $i++) { 

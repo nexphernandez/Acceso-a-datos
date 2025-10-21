@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import com.docencia.ficheros.model.Note;
 
-class XmlServiceNoteTest {
-    XmlServiceNote xmlServiceNote;
+class JsonServiceNoteTest {
+    JsonServiceNote jsonServiceNote;
     Note note;
 
     @BeforeEach
     void beforeEach() {
-        xmlServiceNote = new XmlServiceNote();
+        jsonServiceNote = new JsonServiceNote();
         note = new Note();
         note.setId("1");
         note.setTitle("Titulo");
@@ -20,8 +20,8 @@ class XmlServiceNoteTest {
 
     @Test
     void seriablizarNote() {
-        String noteStr = xmlServiceNote.noteToString(note);
-        Note noteTest = xmlServiceNote.StringToNote(noteStr);
+        String noteStr = jsonServiceNote.noteToString(note);
+        Note noteTest = jsonServiceNote.StringToNote(noteStr);
         Assertions.assertEquals(note, noteTest, "Los elementos deben ser iguales");
     }
 

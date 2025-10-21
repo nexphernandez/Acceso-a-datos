@@ -1,6 +1,8 @@
 package com.docencia.ficheros.serializacion;
 
-public class SimpleBean {
+import java.io.Serializable;
+
+public class SimpleBean implements Serializable{
     private int x = 1;
     private int y = 2;
     public int getX() {

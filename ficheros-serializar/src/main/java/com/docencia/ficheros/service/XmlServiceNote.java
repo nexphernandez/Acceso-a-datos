@@ -30,7 +30,6 @@ public class XmlServiceNote extends ServiceNoteAbstracta {
         throw new UnsupportedOperationException("Unimplemented method 'findById'");
     }
 
-
     @Override
     public Note save(Note n) {
         // TODO Auto-generated method stub

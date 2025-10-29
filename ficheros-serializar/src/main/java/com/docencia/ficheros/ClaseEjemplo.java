@@ -7,12 +7,12 @@ public class ClaseEjemplo {
 
     private static final Logger logger = LoggerFactory.getLogger(ClaseEjemplo.class);
 
-    public ClaseEjemplo(){
+    public ClaseEjemplo() {
         String variable = "Soy variable";
         String otra = "otra variable";
         logger.info("Soy un mensaje: {}, y soy otra variable {}", variable, otra);
         Exception exception = new Exception("Sucedio un error");
-        logger.error("El mensaje que quiero {}, mas la excepcion ",variable, exception);
+        logger.error("El mensaje que quiero {}, mas la excepcion ", variable, exception);
     }
 
 }

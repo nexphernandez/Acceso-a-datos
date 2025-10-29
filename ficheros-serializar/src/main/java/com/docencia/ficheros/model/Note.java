@@ -1,9 +1,12 @@
 package com.docencia.ficheros.model;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import java.util.Objects;
+
 /**
  * Clase note que almacena informacion
+ * 
  * @author nexphernandez
  * @version 1.0.0
  */
@@ -21,8 +24,24 @@ public class Note {
     /**
      * Constructor vacio por defecto
      */
-    public Note(){}
+    public Note() {
+    }
 
+    public Note(String id) {
+        this.id = id;
+    }
+
+    /**
+     * Constructor con los atributos de la clase
+     * @param id identificador de la nota
+     * @param title titulo de la nota
+     * @param content contenido de la nota
+     */
+    public Note(String id,String title, String content){
+        this.id = id;
+        this.title = title;
+        this.content = content;
+    }
 
     public String getId() {
         return this.id;
@@ -47,7 +66,6 @@ public class Note {
     public void setContent(String content) {
         this.content = content;
     }
-
 
     @Override
     public boolean equals(Object o) {

@@ -7,11 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import com.docencia.ficheros.model.Note;
 import com.docencia.ficheros.repo.INotRepository;
 
-public abstract class ServiceNoteAbstracta implements IServiceNote{
+public abstract class ServiceNoteAbstracta implements IServiceNote {
 
     @Autowired
     INotRepository notRepository;
-
 
     public INotRepository getNotRepository() {
         return this.notRepository;

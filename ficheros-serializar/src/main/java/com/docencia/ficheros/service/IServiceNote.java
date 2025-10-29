@@ -16,5 +16,6 @@ public interface IServiceNote {
     public boolean delete(String id);
 
     public String noteToString(Note note);
+
     public Note StringToNote(String data);
 }

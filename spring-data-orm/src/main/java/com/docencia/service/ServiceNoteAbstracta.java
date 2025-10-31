@@ -5,18 +5,18 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.docencia.model.Note;
-import com.docencia.repo.INotRepository;
+import com.docencia.repo.INoteRepository;
 
 public abstract class ServiceNoteAbstracta implements IServiceNote {
 
     @Autowired
-    INotRepository notRepository;
+    INoteRepository notRepository;
 
-    public INotRepository getNotRepository() {
+    public INoteRepository getNotRepository() {
         return this.notRepository;
     }
 
-    public void setNotRepository(INotRepository notRepository) {
+    public void setNotRepository(INoteRepository notRepository) {
         this.notRepository = notRepository;
     }
 

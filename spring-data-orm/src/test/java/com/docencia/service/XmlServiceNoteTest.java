@@ -1,19 +1,18 @@
-package com.docencia.ficheros.service;
+package com.docencia.service;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import com.docencia.model.Note;
-import com.docencia.service.JsonServiceNote;
 
-class JsonServiceNoteTest {
-    JsonServiceNote jsonServiceNote;
+class XmlServiceNoteTest {
+    XmlServiceNote xmlServiceNote;
     Note note;
 
     @BeforeEach
     void beforeEach() {
-        jsonServiceNote = new JsonServiceNote();
+        xmlServiceNote = new XmlServiceNote();
         note = new Note();
         note.setId("1");
         note.setTitle("Titulo");
@@ -22,8 +21,8 @@ class JsonServiceNoteTest {
 
     @Test
     void seriablizarNote() {
-        String noteStr = jsonServiceNote.noteToString(note);
-        Note noteTest = jsonServiceNote.StringToNote(noteStr);
+        String noteStr = xmlServiceNote.noteToString(note);
+        Note noteTest = xmlServiceNote.StringToNote(noteStr);
         Assertions.assertEquals(note, noteTest, "Los elementos deben ser iguales");
     }
 

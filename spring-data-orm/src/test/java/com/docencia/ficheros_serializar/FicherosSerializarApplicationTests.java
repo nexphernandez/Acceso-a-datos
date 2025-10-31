@@ -1,4 +1,4 @@
-package com.docencia.ficheros.ficheros_serializar;
+package com.docencia.ficheros_serializar;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

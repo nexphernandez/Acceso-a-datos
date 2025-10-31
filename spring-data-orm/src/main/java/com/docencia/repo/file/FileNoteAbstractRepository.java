@@ -15,12 +15,12 @@ import java.util.UUID;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 import com.docencia.model.Note;
-import com.docencia.repo.INotRepository;
+import com.docencia.repo.INoteRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import io.micrometer.common.util.StringUtils;
 
-public abstract class FileNoteAbstractRepository implements INotRepository {
+public abstract class FileNoteAbstractRepository implements INoteRepository {
     private String nameFile;
     private Path path;
     private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();

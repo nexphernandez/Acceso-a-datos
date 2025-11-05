@@ -8,7 +8,7 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.docencia.hotel.domain.model.Note;
-import com.docencia.hotel.domain.repo.INoteRepository;
+import com.docencia.hotel.repo.INoteRepository;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

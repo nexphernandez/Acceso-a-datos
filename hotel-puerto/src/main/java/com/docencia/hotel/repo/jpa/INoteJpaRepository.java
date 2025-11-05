@@ -1,4 +1,4 @@
-package com.docencia.hotel.domain.repo.jpa;
+package com.docencia.hotel.repo.jpa;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

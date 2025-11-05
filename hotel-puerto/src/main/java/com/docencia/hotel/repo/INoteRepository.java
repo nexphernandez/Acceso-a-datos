@@ -1,4 +1,4 @@
-package com.docencia.hotel.domain.repo;
+package com.docencia.hotel.repo;
 
 import java.util.List;
 

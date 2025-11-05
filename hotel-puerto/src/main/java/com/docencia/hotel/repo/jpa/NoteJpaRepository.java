@@ -1,7 +1,7 @@
-package com.docencia.hotel.domain.repo.jpa;
+package com.docencia.hotel.repo.jpa;
 
 import com.docencia.hotel.domain.model.Note;
-import com.docencia.hotel.domain.repo.INoteRepository;
+import com.docencia.hotel.repo.INoteRepository;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

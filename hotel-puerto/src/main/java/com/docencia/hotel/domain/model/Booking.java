@@ -28,11 +28,11 @@ public class Booking {
 
     @ManyToOne
     @JoinColumn(name="room_id",nullable=false)
-    private String roomId;
+    private Room room;
 
     @ManyToOne
     @JoinColumn(name="gues_id", nullable=false)
-    private String guesId;
+    private Guest guest;
 
     /**
      * Contructor vacio

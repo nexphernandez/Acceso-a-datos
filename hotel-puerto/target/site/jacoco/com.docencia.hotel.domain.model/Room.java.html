@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Room.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">docencia-notes</a> &gt; <a href="index.source.html" class="el_package">com.docencia.hotel.domain.model</a> &gt; <span class="el_source">Room.java</span></div><h1>Room.java</h1><pre class="source lang-java linenums">package com.docencia.hotel.domain.model;
 
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /**
@@ -31,22 +33,25 @@ public class Room {
     private float precioPorNoche;
 
     @ManyToOne
-    @JoinColumn(name=&quot;hotel_id&quot;)
+    @JoinColumn(name=&quot;hotel_id&quot;,nullable=false)
     private Hotel hotel;
+
+    @OneToMany(mappedBy=&quot;room&quot;)
+    private Set&lt;Booking&gt; bookings;
     
     /**
      * Constructor vacio
      */
-<span class="fc" id="L40">    public Room() {</span>
-<span class="fc" id="L41">    }</span>
+<span class="fc" id="L45">    public Room() {</span>
+<span class="fc" id="L46">    }</span>
 
     /**
      * Constructor con el atributo principal de la Room
      * @param id de la Room
      */
-<span class="fc" id="L47">    public Room(String id) {</span>
-<span class="fc" id="L48">        this.id = id;</span>
-<span class="fc" id="L49">    }</span>
+<span class="fc" id="L52">    public Room(String id) {</span>
+<span class="fc" id="L53">        this.id = id;</span>
+<span class="fc" id="L54">    }</span>
 
     /**
      * Constructor con todos los atributos de la clase Room
@@ -55,59 +60,59 @@ public class Room {
      * @param tipo de la Room
      * @param precioPorNoche de la Room
      */
-<span class="fc" id="L58">    public Room(String id, int numero, String tipo, float precioPorNoche) {</span>
-<span class="fc" id="L59">        this.id = id;</span>
-<span class="fc" id="L60">        this.numero = numero;</span>
-<span class="fc" id="L61">        this.tipo = tipo;</span>
-<span class="fc" id="L62">        this.precioPorNoche = precioPorNoche;</span>
-<span class="fc" id="L63">    }</span>
+<span class="fc" id="L63">    public Room(String id, int numero, String tipo, float precioPorNoche) {</span>
+<span class="fc" id="L64">        this.id = id;</span>
+<span class="fc" id="L65">        this.numero = numero;</span>
+<span class="fc" id="L66">        this.tipo = tipo;</span>
+<span class="fc" id="L67">        this.precioPorNoche = precioPorNoche;</span>
+<span class="fc" id="L68">    }</span>
 
     public String getId() {
-<span class="fc" id="L66">        return this.id;</span>
+<span class="fc" id="L71">        return this.id;</span>
     }
 
     public void setId(String id) {
-<span class="fc" id="L70">        this.id = id;</span>
-<span class="fc" id="L71">    }</span>
+<span class="fc" id="L75">        this.id = id;</span>
+<span class="fc" id="L76">    }</span>
 
     public int getNumero() {
-<span class="fc" id="L74">        return this.numero;</span>
+<span class="fc" id="L79">        return this.numero;</span>
     }
 
     public void setNumero(int numero) {
-<span class="fc" id="L78">        this.numero = numero;</span>
-<span class="fc" id="L79">    }</span>
+<span class="fc" id="L83">        this.numero = numero;</span>
+<span class="fc" id="L84">    }</span>
 
     public String getTipo() {
-<span class="fc" id="L82">        return this.tipo;</span>
+<span class="fc" id="L87">        return this.tipo;</span>
     }
 
     public void setTipo(String tipo) {
-<span class="fc" id="L86">        this.tipo = tipo;</span>
-<span class="fc" id="L87">    }</span>
+<span class="fc" id="L91">        this.tipo = tipo;</span>
+<span class="fc" id="L92">    }</span>
 
     public float getPrecioPorNoche() {
-<span class="fc" id="L90">        return this.precioPorNoche;</span>
+<span class="fc" id="L95">        return this.precioPorNoche;</span>
     }
 
     public void setPrecioPorNoche(float precioPorNoche) {
-<span class="fc" id="L94">        this.precioPorNoche = precioPorNoche;</span>
-<span class="fc" id="L95">    }</span>
+<span class="fc" id="L99">        this.precioPorNoche = precioPorNoche;</span>
+<span class="fc" id="L100">    }</span>
 
     @Override
     public boolean equals(Object o) {
-<span class="fc bfc" id="L99" title="All 2 branches covered.">        if (o == this)</span>
-<span class="fc" id="L100">            return true;</span>
-<span class="fc bfc" id="L101" title="All 2 branches covered.">        if (!(o instanceof Room)) {</span>
-<span class="fc" id="L102">            return false;</span>
+<span class="fc bfc" id="L104" title="All 2 branches covered.">        if (o == this)</span>
+<span class="fc" id="L105">            return true;</span>
+<span class="fc bfc" id="L106" title="All 2 branches covered.">        if (!(o instanceof Room)) {</span>
+<span class="fc" id="L107">            return false;</span>
         }
-<span class="fc" id="L104">        Room room = (Room) o;</span>
-<span class="fc" id="L105">        return Objects.equals(id, room.id);</span>
+<span class="fc" id="L109">        Room room = (Room) o;</span>
+<span class="fc" id="L110">        return Objects.equals(id, room.id);</span>
     }
 
     @Override
     public int hashCode() {
-<span class="fc" id="L110">        return Objects.hash(id);</span>
+<span class="fc" id="L115">        return Objects.hash(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.docencia.hotel.domain.model.BookingModelTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.074 s -- in com.docencia.hotel.domain.model.BookingModelTest

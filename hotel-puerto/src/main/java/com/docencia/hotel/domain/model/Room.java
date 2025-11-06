@@ -1,12 +1,14 @@
 package com.docencia.hotel.domain.model;
 
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 /**
@@ -31,8 +33,11 @@ public class Room {
     private float precioPorNoche;
 
     @ManyToOne
-    @JoinColumn(name="hotel_id")
+    @JoinColumn(name="hotel_id",nullable=false)
     private Hotel hotel;
+
+    @OneToMany(mappedBy="room")
+    private Set<Booking> bookings;
     
     /**
      * Constructor vacio

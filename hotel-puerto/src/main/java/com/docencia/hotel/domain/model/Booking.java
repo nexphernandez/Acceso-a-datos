@@ -1,10 +1,13 @@
 package com.docencia.hotel.domain.model;
+import java.util.Date;
+import java.util.Objects;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.util.Date;
-import java.util.Objects;
 
 /**
  * @author nexphernandez
@@ -23,18 +26,34 @@ public class Booking {
     @Column(name="check_out")
     private Date fechaSalida;
 
+    @ManyToOne
+    @JoinColumn(name="room_id",nullable=false)
+    private String roomId;
+
+    @ManyToOne
+    @JoinColumn(name="gues_id", nullable=false)
+    private String guesId;
+
     /**
      * Contructor vacio
      */
     public Booking() {
     }
 
-    
+    /**
+     * Constructor con el atributo principal de la clase booking
+     * @param id del booking
+     */
     public Booking(String id) {
         this.id = id;
     }
 
-    
+    /**
+     * Constructor con todos los atributos de la clase booking
+     * @param id del booking
+     * @param fechaEntrada del booking
+     * @param fechaSalida del booking
+     */
     public Booking(String id, Date fechaEntrada, Date fechaSalida) {
         this.id = id;
         this.fechaEntrada = fechaEntrada;

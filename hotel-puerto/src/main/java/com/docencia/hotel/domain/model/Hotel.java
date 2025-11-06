@@ -1,6 +1,5 @@
 package com.docencia.hotel.domain.model;
 
-import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -28,8 +27,8 @@ public class Hotel {
     @Column(name = "address")
     private String direccion;
 
-    @OneToMany
-    private Set<Room> rooms = new HashSet<>();
+    @OneToMany(mappedBy="hotel")
+    private Set<Room> rooms;
     
     /**
      * Constructor vacio

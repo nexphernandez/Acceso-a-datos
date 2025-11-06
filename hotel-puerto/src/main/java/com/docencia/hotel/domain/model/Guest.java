@@ -1,10 +1,12 @@
 package com.docencia.hotel.domain.model;
 
 import java.util.Objects;
+import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 /**
  * @author nexphernandez
@@ -26,6 +28,9 @@ public class Guest {
 
     @Column(name="phone")
     private  String telefono;
+
+    @OneToMany(mappedBy="guest")
+    Set<Booking> bookings;
 
     /**
      * Constructor vacio

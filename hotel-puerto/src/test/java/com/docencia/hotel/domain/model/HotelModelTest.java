@@ -22,9 +22,9 @@ class HotelModelTest {
 
     @Test
     void modificarHotelTest() {
-        hotel.setId("3");
-        hotel.setAddress("direccion");
-        hotel.setName("hotel");
+        hotel.setId("4");
+        hotel.setdireccion("direccion");
+        hotel.setnombre("hotel");
         
     }
 
@@ -57,7 +57,7 @@ class HotelModelTest {
     @Test
     void verificarGettersTest(){
         Assertions.assertTrue(hotelCompleto.getId().equals("3"));
-        Assertions.assertTrue(hotelCompleto.getName().equals("hotel"));
-        Assertions.assertTrue(hotelCompleto.getAddress().equals("direccion"));
+        Assertions.assertTrue(hotelCompleto.getnombre().equals("hotel"));
+        Assertions.assertTrue(hotelCompleto.getdireccion().equals("direccion"));
     }
 }

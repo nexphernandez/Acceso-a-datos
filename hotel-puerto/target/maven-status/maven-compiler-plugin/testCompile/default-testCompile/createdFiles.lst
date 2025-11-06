@@ -1,2 +1,4 @@
-com/docencia/hotel/repo/NoteJpaRepositoryTest.class
-com/docencia/hotel/domain/model/HotelModelTest.class
+com\docencia\hotel\domain\model\HotelModelTest.class
+com\docencia\hotel\domain\model\RoomModelTest.class
+com\docencia\hotel\repo\NoteJpaRepositoryTest.class
+com\docencia\hotel\domain\model\GuestModelTest.class

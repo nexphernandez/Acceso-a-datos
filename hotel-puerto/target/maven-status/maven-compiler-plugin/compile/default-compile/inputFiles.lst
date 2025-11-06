@@ -1,6 +1,9 @@
-/home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/repo/jpa/NoteJpaRepository.java
-/home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/repo/INoteRepository.java
-/home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/Application.java
-/home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/domain/model/Hotel.java
-/home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/repo/jpa/INoteJpaRepository.java
-/home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/domain/model/Note.java
+E:\Nicolas\Documents\Acceso-a-datos\hotel-puerto\src\main\java\com\docencia\hotel\domain\model\Note.java
+E:\Nicolas\Documents\Acceso-a-datos\hotel-puerto\src\main\java\com\docencia\hotel\domain\model\Room.java
+E:\Nicolas\Documents\Acceso-a-datos\hotel-puerto\src\main\java\com\docencia\hotel\repo\INoteRepository.java
+E:\Nicolas\Documents\Acceso-a-datos\hotel-puerto\src\main\java\com\docencia\hotel\domain\model\Guest.java
+E:\Nicolas\Documents\Acceso-a-datos\hotel-puerto\src\main\java\com\docencia\hotel\repo\jpa\NoteJpaRepository.java
+E:\Nicolas\Documents\Acceso-a-datos\hotel-puerto\src\main\java\com\docencia\hotel\domain\model\Booking.java
+E:\Nicolas\Documents\Acceso-a-datos\hotel-puerto\src\main\java\com\docencia\hotel\domain\model\Hotel.java
+E:\Nicolas\Documents\Acceso-a-datos\hotel-puerto\src\main\java\com\docencia\hotel\Application.java
+E:\Nicolas\Documents\Acceso-a-datos\hotel-puerto\src\main\java\com\docencia\hotel\repo\jpa\INoteJpaRepository.java

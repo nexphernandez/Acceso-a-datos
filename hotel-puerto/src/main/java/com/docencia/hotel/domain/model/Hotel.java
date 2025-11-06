@@ -1,16 +1,21 @@
 package com.docencia.hotel.domain.model;
 
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-
-import java.util.Objects;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 /**
  * @author nexphernandez
  * @version 1.0.0
  */
 @Entity
+@Table(name="hotel")
 public class Hotel {
 
     @Id
@@ -18,11 +23,14 @@ public class Hotel {
     private String id;
 
     @Column(name = "name")
-    private String name;
+    private String nombre;
 
     @Column(name = "address")
-    private String address;
+    private String direccion;
 
+    @OneToMany
+    private Set<Room> rooms = new HashSet<>();
+    
     /**
      * Constructor vacio
      */
@@ -40,13 +48,13 @@ public class Hotel {
     /**
      * Constructor con todos los atributos del hotel
      * @param id del hotel
-     * @param name del hotel
-     * @param address del hotel
+     * @param nombre del hotel
+     * @param direccion del hotel
      */
-    public Hotel(String id, String name, String address) {
+    public Hotel(String id, String nombre, String direccion) {
         this.id = id;
-        this.name = name;
-        this.address = address;
+        this.nombre = nombre;
+        this.direccion = direccion;
     }
 
     public String getId() {
@@ -57,20 +65,20 @@ public class Hotel {
         this.id = id;
     }
 
-    public String getName() {
-        return this.name;
+    public String getnombre() {
+        return this.nombre;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setnombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getAddress() {
-        return this.address;
+    public String getdireccion() {
+        return this.direccion;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setdireccion(String direccion) {
+        this.direccion = direccion;
     }    
 
     @Override

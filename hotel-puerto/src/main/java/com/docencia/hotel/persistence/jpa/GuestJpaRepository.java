@@ -5,22 +5,21 @@ import java.util.Set;
 import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
-import com.docencia.hotel.domain.model.Hotel;
-import com.docencia.hotel.repository.IHotelRepository;
-import com.docencia.hotel.repository.jpa.IHotelJpaRepository;
+
+import com.docencia.hotel.domain.model.Guest;
+import com.docencia.hotel.repository.IGuestRepository;
+import com.docencia.hotel.repository.jpa.IGuestJpaRepository;
 
 /**
  * @author nexphernandez
  * @version 1.0.0
  */
-
 @Repository
-public class HotelJpaRepository implements IHotelRepository{
+public class GuestJpaRepository implements IGuestRepository{
 
-    private final IHotelJpaRepository repository;
+    private final IGuestJpaRepository repository;
 
-    public HotelJpaRepository(IHotelJpaRepository repository){
+    public GuestJpaRepository(IGuestJpaRepository repository){
         this.repository = repository;
     }
 
@@ -30,26 +29,24 @@ public class HotelJpaRepository implements IHotelRepository{
     }
 
     @Override
-    public Hotel findById(String id) {
+    public Guest findById(String id) {
         return repository.findById(id).orElse(null);
     }
 
     @Override
-    public Set<Hotel> findAll() {
+    public Set<Guest> findAll() {
         return new HashSet<>(repository.findAll());
     }
 
     @Override
-    @Transactional
-    public Hotel save(Hotel hotel) {
-        if (hotel.getId() == null || hotel.getId().isBlank()) {
-            hotel.setId(UUID.randomUUID().toString());
+    public Guest save(Guest guest) {
+        if (guest.getId() == null || guest.getId().isBlank()) {
+            guest.setId(UUID.randomUUID().toString());
         }
-        return repository.save(hotel);
+        return repository.save(guest);
     }
 
     @Override
-    @Transactional
     public boolean deleteById(String id) {
         if (!repository.existsById(id)) {
             return false;
@@ -57,7 +54,5 @@ public class HotelJpaRepository implements IHotelRepository{
         repository.deleteById(id);
         return true;
     }
-
-
-
+    
 }

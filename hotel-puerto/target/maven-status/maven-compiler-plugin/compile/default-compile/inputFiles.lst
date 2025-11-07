@@ -2,6 +2,7 @@
 /home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/repository/IRoomRepository.java
 /home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/repository/jpa/IRoomJpaRepository.java
 /home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/repository/jpa/IBookingJpaRepository.java
+/home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/persistence/jpa/RoomJpaRepository.java
 /home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/domain/model/Booking.java
 /home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/domain/model/Hotel.java
 /home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/main/java/com/docencia/hotel/domain/model/Room.java

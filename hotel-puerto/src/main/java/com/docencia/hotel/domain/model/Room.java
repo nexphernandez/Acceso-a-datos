@@ -59,12 +59,14 @@ public class Room {
      * @param numero de la Room
      * @param tipo de la Room
      * @param precioPorNoche de la Room
+     * @param hotel de la Room
      */
-    public Room(String id, int numero, String tipo, float precioPorNoche) {
+    public Room(String id, int numero, String tipo, float precioPorNoche, Hotel hotel) {
         this.id = id;
         this.numero = numero;
         this.tipo = tipo;
         this.precioPorNoche = precioPorNoche;
+        this.hotel = hotel;
     }
 
     public String getId() {
@@ -97,6 +99,14 @@ public class Room {
 
     public void setPrecioPorNoche(float precioPorNoche) {
         this.precioPorNoche = precioPorNoche;
+    }
+
+    public Hotel getHotel() {
+        return this.hotel;
+    }
+
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
     }
 
     @Override

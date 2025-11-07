@@ -1,8 +1,9 @@
 
 package com.docencia.hotel.repository.jpa;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.docencia.hotel.domain.model.Room;
@@ -12,6 +13,5 @@ import com.docencia.hotel.domain.model.Room;
  */
 @Repository
 public interface IRoomJpaRepository extends JpaRepository<Room, String>{
-    
-    Room buscarHabitacionPorId(String id);
+   List<Room> findByHotelId(String id);
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.docencia.hotel.domain.model.BookingModelTest" time="0.021" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.docencia.hotel.persistence.jpa.RoomJpaRepositoryTest" time="6.332" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -59,11 +59,410 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="verificarNotEqualsTest" classname="com.docencia.hotel.domain.model.BookingModelTest" time="0.003"/>
-  <testcase name="verificarGettersTest" classname="com.docencia.hotel.domain.model.BookingModelTest" time="0.002"/>
-  <testcase name="modificarBookingTest" classname="com.docencia.hotel.domain.model.BookingModelTest" time="0.001"/>
-  <testcase name="verificarEqualsTest" classname="com.docencia.hotel.domain.model.BookingModelTest" time="0.001"/>
-  <testcase name="verificarHasCodeTest" classname="com.docencia.hotel.domain.model.BookingModelTest" time="0.001"/>
-  <testcase name="verificarEqualsObjectTest" classname="com.docencia.hotel.domain.model.BookingModelTest" time="0.001"/>
-  <testcase name="verificarEqualsNoObjectsTest" classname="com.docencia.hotel.domain.model.BookingModelTest" time="0.001"/>
+  <testcase name="saveNullTest" classname="com.docencia.hotel.persistence.jpa.RoomJpaRepositoryTest" time="0.634">
+    <system-out><![CDATA[18:54:58.442 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.docencia.hotel.persistence.jpa.RoomJpaRepositoryTest]: RoomJpaRepositoryTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+18:54:58.629 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.docencia.hotel.Application for test class com.docencia.hotel.persistence.jpa.RoomJpaRepositoryTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2025-11-07T18:54:59.476Z  INFO 197097 --- [           main] c.d.h.p.jpa.RoomJpaRepositoryTest        : Starting RoomJpaRepositoryTest using Java 17.0.15 with PID 197097 (started by dam in /home/dam/Descargas/Acceso-a-datos/hotel-puerto)
+2025-11-07T18:54:59.479Z  INFO 197097 --- [           main] c.d.h.p.jpa.RoomJpaRepositoryTest        : The following 1 profile is active: "test"
+2025-11-07T18:55:00.012Z  INFO 197097 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-07T18:55:00.110Z  INFO 197097 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 80 ms. Found 3 JPA repository interfaces.
+2025-11-07T18:55:00.603Z  INFO 197097 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-07T18:55:00.688Z  INFO 197097 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2025-11-07T18:55:00.751Z  INFO 197097 --- [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-07T18:55:01.121Z  INFO 197097 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-07T18:55:01.169Z  INFO 197097 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-07T18:55:01.354Z  INFO 197097 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.sqlite.jdbc4.JDBC4Connection@3612a60d
+2025-11-07T18:55:01.357Z  INFO 197097 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-07T18:55:02.689Z  INFO 197097 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-07T18:55:02.692Z  INFO 197097 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-07T18:55:03.291Z  INFO 197097 --- [           main] c.d.h.p.jpa.RoomJpaRepositoryTest        : Started RoomJpaRepositoryTest in 4.365 seconds (process running for 6.171)
+Hibernate: 
+    select
+        h1_0.id,
+        h1_0.address,
+        h1_0.name 
+    from
+        hotel h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        h1_0.id,
+        h1_0.address,
+        h1_0.name,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0 
+    join
+        hotel h1_0 
+            on h1_0.id=r1_0.hotel_id 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        h1_0.id,
+        h1_0.address,
+        h1_0.name,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0 
+    join
+        hotel h1_0 
+            on h1_0.id=r1_0.hotel_id 
+    where
+        r1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="deleteByIdTest" classname="com.docencia.hotel.persistence.jpa.RoomJpaRepositoryTest" time="0.371">
+    <system-out><![CDATA[Hibernate: 
+    select
+        h1_0.id,
+        h1_0.address,
+        h1_0.name 
+    from
+        hotel h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        h1_0.id,
+        h1_0.address,
+        h1_0.name,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0 
+    join
+        hotel h1_0 
+            on h1_0.id=r1_0.hotel_id 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        hotel
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        room
+        (hotel_id, number, price_per_night, type, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        count(*) 
+    from
+        room r1_0 
+    where
+        r1_0.id=?
+Hibernate: 
+    delete 
+    from
+        room 
+    where
+        id=?
+Hibernate: 
+    select
+        count(*) 
+    from
+        room r1_0 
+    where
+        r1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="saveBlankTest" classname="com.docencia.hotel.persistence.jpa.RoomJpaRepositoryTest" time="0.014">
+    <system-out><![CDATA[Hibernate: 
+    select
+        h1_0.id,
+        h1_0.address,
+        h1_0.name 
+    from
+        hotel h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        h1_0.id,
+        h1_0.address,
+        h1_0.name,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0 
+    join
+        hotel h1_0 
+            on h1_0.id=r1_0.hotel_id 
+    where
+        r1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        h1_0.id,
+        h1_0.address,
+        h1_0.name,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0 
+    join
+        hotel h1_0 
+            on h1_0.id=r1_0.hotel_id 
+    where
+        r1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="deleteDontExistId" classname="com.docencia.hotel.persistence.jpa.RoomJpaRepositoryTest" time="0.012">
+    <system-out><![CDATA[Hibernate: 
+    select
+        h1_0.id,
+        h1_0.address,
+        h1_0.name 
+    from
+        hotel h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        h1_0.id,
+        h1_0.address,
+        h1_0.name,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0 
+    join
+        hotel h1_0 
+            on h1_0.id=r1_0.hotel_id 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        hotel
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        room
+        (hotel_id, number, price_per_night, type, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        count(*) 
+    from
+        room r1_0 
+    where
+        r1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="findAllTest" classname="com.docencia.hotel.persistence.jpa.RoomJpaRepositoryTest" time="0.054">
+    <system-out><![CDATA[Hibernate: 
+    select
+        h1_0.id,
+        h1_0.address,
+        h1_0.name 
+    from
+        hotel h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        h1_0.id,
+        h1_0.address,
+        h1_0.name,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0 
+    join
+        hotel h1_0 
+            on h1_0.id=r1_0.hotel_id 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        hotel
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        room
+        (hotel_id, number, price_per_night, type, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0
+Hibernate: 
+    select
+        h1_0.id,
+        h1_0.address,
+        h1_0.name 
+    from
+        hotel h1_0 
+    where
+        h1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="saveValidRoomTest" classname="com.docencia.hotel.persistence.jpa.RoomJpaRepositoryTest" time="0.009">
+    <system-out><![CDATA[Hibernate: 
+    select
+        h1_0.id,
+        h1_0.address,
+        h1_0.name 
+    from
+        hotel h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        h1_0.id,
+        h1_0.address,
+        h1_0.name,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0 
+    join
+        hotel h1_0 
+            on h1_0.id=r1_0.hotel_id 
+    where
+        r1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="findByIdTest" classname="com.docencia.hotel.persistence.jpa.RoomJpaRepositoryTest" time="0.01">
+    <system-out><![CDATA[Hibernate: 
+    select
+        h1_0.id,
+        h1_0.address,
+        h1_0.name 
+    from
+        hotel h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        h1_0.id,
+        h1_0.address,
+        h1_0.name,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0 
+    join
+        hotel h1_0 
+            on h1_0.id=r1_0.hotel_id 
+    where
+        r1_0.id=?
+]]></system-out>
+  </testcase>
+  <testcase name="findByHotelIdTest" classname="com.docencia.hotel.persistence.jpa.RoomJpaRepositoryTest" time="0.031">
+    <system-out><![CDATA[Hibernate: 
+    select
+        h1_0.id,
+        h1_0.address,
+        h1_0.name 
+    from
+        hotel h1_0 
+    where
+        h1_0.id=?
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        h1_0.id,
+        h1_0.address,
+        h1_0.name,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0 
+    join
+        hotel h1_0 
+            on h1_0.id=r1_0.hotel_id 
+    where
+        r1_0.id=?
+Hibernate: 
+    insert 
+    into
+        hotel
+        (address, name, id) 
+    values
+        (?, ?, ?)
+Hibernate: 
+    insert 
+    into
+        room
+        (hotel_id, number, price_per_night, type, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    select
+        r1_0.id,
+        r1_0.hotel_id,
+        r1_0.number,
+        r1_0.price_per_night,
+        r1_0.type 
+    from
+        room r1_0 
+    left join
+        hotel h1_0 
+            on h1_0.id=r1_0.hotel_id 
+    where
+        h1_0.id=?
+]]></system-out>
+  </testcase>
 </testsuite>

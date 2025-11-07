@@ -6,11 +6,8 @@ import java.util.UUID;
 
 import org.springframework.stereotype.Repository;
 
-import com.docencia.hotel.domain.model.Guest;
 import com.docencia.hotel.domain.model.Room;
-import com.docencia.hotel.repository.IGuestRepository;
 import com.docencia.hotel.repository.IRoomRepository;
-import com.docencia.hotel.repository.jpa.IGuestJpaRepository;
 import com.docencia.hotel.repository.jpa.IRoomJpaRepository;
 
 /**
@@ -59,9 +56,8 @@ public class RoomJpaRepository implements IRoomRepository{
     }
 
     @Override
-    public Set<Room> findByHotelId(String hotelId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findByHotelId'");
+    public Room findByHotelId(String hotelId) {
+        return repository.findByHotelId(hotelId).get(0);
     }
     
 }

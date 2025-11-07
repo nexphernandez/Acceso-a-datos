@@ -10,13 +10,15 @@ class RoomModelTest {
     private Room room;
     private Room roomId;
     private Room roomCompleto;
+    private Hotel hotel;
 
     @BeforeEach
     @Transactional
     void beforeEach() {
+        hotel = new Hotel("5");
         room = new Room();
         roomId = new Room("3");
-        roomCompleto = new Room("3", 205, "single",15);
+        roomCompleto = new Room("3", 205, "single",15, hotel);
 
     }
 

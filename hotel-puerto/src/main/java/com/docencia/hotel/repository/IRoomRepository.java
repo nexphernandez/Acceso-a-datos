@@ -16,5 +16,5 @@ public interface IRoomRepository {
 
     boolean deleteById(String id);
 
-    Set<Room> findByHotelId(String hotelId);
+    Room findByHotelId(String hotelId);
 }

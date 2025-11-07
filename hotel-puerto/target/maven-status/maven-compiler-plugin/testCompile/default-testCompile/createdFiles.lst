@@ -4,3 +4,4 @@ com/docencia/hotel/domain/model/BookingModelTest.class
 com/docencia/hotel/persistence/jpa/HotelJpaRepositoryTest.class
 com/docencia/hotel/domain/model/GuestModelTest.class
 com/docencia/hotel/domain/model/RoomModelTest.class
+com/docencia/hotel/persistence/jpa/RoomJpaRepositoryTest.class

@@ -1,11 +1,12 @@
 package com.docencia.hotel.persistence.jpa;
 
-import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
+
 import org.springframework.stereotype.Repository;
+
 import com.docencia.hotel.domain.model.Booking;
 import com.docencia.hotel.repository.IBookingRepository;
 import com.docencia.hotel.repository.jpa.IBookingJpaRepository;
@@ -58,11 +59,6 @@ public class BookingJpaRepository implements IBookingRepository {
     @Override
     public Booking findByRoomIdAndDateRange(String roomId, String startDate, String endDate) {
         List<Booking> bookings = repository.findByRoomIdAndDateRange(roomId, startDate, endDate);
-        
-        if (bookings == null || bookings.isEmpty()) {
-            return null;
-        }
-        
         return bookings.get(0);
     }
 }

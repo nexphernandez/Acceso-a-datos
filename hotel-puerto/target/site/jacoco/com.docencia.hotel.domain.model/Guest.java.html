@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Guest.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">docencia-notes</a> &gt; <a href="index.source.html" class="el_package">com.docencia.hotel.domain.model</a> &gt; <span class="el_source">Guest.java</span></div><h1>Guest.java</h1><pre class="source lang-java linenums">package com.docencia.hotel.domain.model;
+
+import java.util.Objects;
+import java.util.Set;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+/**
+ * @author nexphernandez
+ * @version 1.0.0
+ */
+@Entity
+@Table(name=&quot;guest&quot;)
+public class Guest {
+
+    @Id
+    @Column(name=&quot;id&quot;)
+    private String id;
+
+    @Column(name=&quot;full_name&quot;)
+    private String nombreCompelto;
+
+    @Column(name=&quot;email&quot;)
+    private String email;
+
+    @Column(name=&quot;phone&quot;)
+    private  String telefono;
+
+    @OneToMany(mappedBy=&quot;guest&quot;)
+    Set&lt;Booking&gt; bookings;
+
+    /**
+     * Constructor vacio
+     */
+<span class="fc" id="L38">    public Guest() {</span>
+<span class="fc" id="L39">    }</span>
+
+    /**
+     * Constructor con el atributo principal de la Guest
+     * @param id de la Guest
+     */
+<span class="fc" id="L45">    public Guest(String id) {</span>
+<span class="fc" id="L46">        this.id = id;</span>
+<span class="fc" id="L47">    }</span>
+
+    /**
+     * Contructor de los atributos de la clase Guest
+     * @param id de la Guest
+     * @param nombreCompelto de la persona que realiza la peticion
+     * @param email de la persona que realiza la peticion
+     * @param telefono de la persona que realiza la peticion
+     */
+<span class="fc" id="L56">    public Guest(String id, String nombreCompelto, String email, String telefono) {</span>
+<span class="fc" id="L57">        this.id = id;</span>
+<span class="fc" id="L58">        this.nombreCompelto = nombreCompelto;</span>
+<span class="fc" id="L59">        this.email = email;</span>
+<span class="fc" id="L60">        this.telefono = telefono;</span>
+<span class="fc" id="L61">    }</span>
+
+    public String getId() {
+<span class="fc" id="L64">        return this.id;</span>
+    }
+
+    public void setId(String id) {
+<span class="fc" id="L68">        this.id = id;</span>
+<span class="fc" id="L69">    }</span>
+
+    public String getNombreCompelto() {
+<span class="fc" id="L72">        return this.nombreCompelto;</span>
+    }
+
+    public void setNombreCompelto(String nombreCompelto) {
+<span class="fc" id="L76">        this.nombreCompelto = nombreCompelto;</span>
+<span class="fc" id="L77">    }</span>
+
+    public String getEmail() {
+<span class="fc" id="L80">        return this.email;</span>
+    }
+
+    public void setEmail(String email) {
+<span class="fc" id="L84">        this.email = email;</span>
+<span class="fc" id="L85">    }</span>
+
+    public String getTelefono() {
+<span class="fc" id="L88">        return this.telefono;</span>
+    }
+
+    public void setTelefono(String telefono) {
+<span class="fc" id="L92">        this.telefono = telefono;</span>
+<span class="fc" id="L93">    }</span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="fc bfc" id="L97" title="All 2 branches covered.">        if (o == this)</span>
+<span class="fc" id="L98">            return true;</span>
+<span class="fc bfc" id="L99" title="All 2 branches covered.">        if (!(o instanceof Guest)) {</span>
+<span class="fc" id="L100">            return false;</span>
+        }
+<span class="fc" id="L102">        Guest guest = (Guest) o;</span>
+<span class="fc" id="L103">        return Objects.equals(id, guest.id);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L108">        return Objects.hash(id);</span>
+    }
+
+    
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

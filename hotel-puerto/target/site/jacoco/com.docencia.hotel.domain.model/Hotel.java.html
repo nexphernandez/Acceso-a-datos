@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Hotel.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">docencia-notes</a> &gt; <a href="index.source.html" class="el_package">com.docencia.hotel.domain.model</a> &gt; <span class="el_source">Hotel.java</span></div><h1>Hotel.java</h1><pre class="source lang-java linenums">package com.docencia.hotel.domain.model;
+
+import java.util.Objects;
+import java.util.Set;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+/**
+ * @author nexphernandez
+ * @version 1.0.0
+ */
+@Entity
+@Table(name=&quot;hotel&quot;)
+public class Hotel {
+
+    @Id
+    @Column(name = &quot;id&quot;)
+    private String id;
+
+    @Column(name = &quot;name&quot;)
+    private String nombre;
+
+    @Column(name = &quot;address&quot;)
+    private String direccion;
+
+    @OneToMany(mappedBy=&quot;hotel&quot;)
+    private Set&lt;Room&gt; rooms;
+    
+    /**
+     * Constructor vacio
+     */
+<span class="fc" id="L36">    public Hotel() {</span>
+<span class="fc" id="L37">    }</span>
+
+    /**
+     * Constructor con el atributo principal del hotel
+     * @param id del hotel
+     */
+<span class="fc" id="L43">    public Hotel(String id) {</span>
+<span class="fc" id="L44">        this.id = id;</span>
+<span class="fc" id="L45">    }</span>
+
+    /**
+     * Constructor con todos los atributos del hotel
+     * @param id del hotel
+     * @param nombre del hotel
+     * @param direccion del hotel
+     */
+<span class="fc" id="L53">    public Hotel(String id, String nombre, String direccion) {</span>
+<span class="fc" id="L54">        this.id = id;</span>
+<span class="fc" id="L55">        this.nombre = nombre;</span>
+<span class="fc" id="L56">        this.direccion = direccion;</span>
+<span class="fc" id="L57">    }</span>
+
+    public String getId() {
+<span class="fc" id="L60">        return this.id;</span>
+    }
+
+    public void setId(String id) {
+<span class="fc" id="L64">        this.id = id;</span>
+<span class="fc" id="L65">    }</span>
+
+    public String getnombre() {
+<span class="fc" id="L68">        return this.nombre;</span>
+    }
+
+    public void setnombre(String nombre) {
+<span class="fc" id="L72">        this.nombre = nombre;</span>
+<span class="fc" id="L73">    }</span>
+
+    public String getdireccion() {
+<span class="fc" id="L76">        return this.direccion;</span>
+    }
+
+    public void setdireccion(String direccion) {
+<span class="fc" id="L80">        this.direccion = direccion;</span>
+<span class="fc" id="L81">    }    </span>
+
+    @Override
+    public boolean equals(Object o) {
+<span class="fc bfc" id="L85" title="All 2 branches covered.">        if (o == this)</span>
+<span class="fc" id="L86">            return true;</span>
+<span class="fc bfc" id="L87" title="All 2 branches covered.">        if (!(o instanceof Hotel)) {</span>
+<span class="fc" id="L88">            return false;</span>
+        }
+<span class="fc" id="L90">        Hotel hotel = (Hotel) o;</span>
+<span class="fc" id="L91">        return Objects.equals(id, hotel.id);</span>
+    }
+
+    @Override
+    public int hashCode() {
+<span class="fc" id="L96">        return Objects.hash(id);</span>
+    }
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

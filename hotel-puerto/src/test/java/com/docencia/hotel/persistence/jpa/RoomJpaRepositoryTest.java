@@ -1,9 +1,6 @@
 package com.docencia.hotel.persistence.jpa;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
-
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,6 +13,7 @@ import com.docencia.hotel.domain.model.Hotel;
 import com.docencia.hotel.domain.model.Room;
 import com.docencia.hotel.repository.IHotelRepository;
 import com.docencia.hotel.repository.IRoomRepository;
+
 import jakarta.transaction.Transactional;
 
 @SpringBootTest
@@ -106,15 +104,15 @@ class RoomJpaRepositoryTest {
     }
 
     
-        @Test
-        @Transactional
-        void findByHotelIdTest(){
-            roomRepository.save(savedRoom);
-            Hotel hoteSaved = hotelRepository.save(hotelBase);
-            String id = hoteSaved.getId();
-            Room exist = roomRepository.findByHotelId(id);
-            Assertions.assertNotNull(exist);
-        }
+    @Test
+    @Transactional
+    void findByHotelIdTest(){
+        roomRepository.save(savedRoom);
+        Hotel hoteSaved = hotelRepository.save(hotelBase);
+        String id = hoteSaved.getId();
+        Room exist = roomRepository.findByHotelId(id);
+        Assertions.assertNotNull(exist);
+    }
         
     @Test
     @Transactional

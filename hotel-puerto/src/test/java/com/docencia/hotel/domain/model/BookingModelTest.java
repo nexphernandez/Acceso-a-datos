@@ -1,8 +1,5 @@
 package com.docencia.hotel.domain.model;
 
-import java.time.LocalDate;
-import java.util.Date;
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -22,8 +19,8 @@ class BookingModelTest {
     @Transactional
     void beforeEach() {
 
-        fechaEntrada = LocalDate.of(2025, 9, 23);
-        fechaSalida = LocalDate.of(2025, 9, 25);
+        fechaEntrada = "2025, 9, 23";
+        fechaSalida = "2025, 9, 25";
         guest = new Guest();
         room = new Room();
         booking = new Booking();
@@ -34,8 +31,10 @@ class BookingModelTest {
     @Test
     void modificarBookingTest() {
         booking.setId("5");
-        booking.setFechaEntrada(LocalDate.of(2025, 9, 24));
-        booking.setFechaSalida(LocalDate.of(2025, 9, 27));
+        booking.setFechaEntrada("2025, 9, 24");
+        booking.setFechaSalida("2025, 9, 27");
+        booking.setGuest(guest);
+        booking.setRoom(room);
     }
 
     @Test
@@ -68,5 +67,7 @@ class BookingModelTest {
         Assertions.assertTrue(bookingCompleto.getId().equals("3"));
         Assertions.assertTrue(bookingCompleto.getFechaEntrada().equals(fechaEntrada));
         Assertions.assertTrue(bookingCompleto.getFechaSalida().equals(fechaSalida));
+        Assertions.assertTrue(bookingCompleto.getGuest().equals(guest));
+        Assertions.assertTrue(bookingCompleto.getRoom().equals(room));
     }
 }

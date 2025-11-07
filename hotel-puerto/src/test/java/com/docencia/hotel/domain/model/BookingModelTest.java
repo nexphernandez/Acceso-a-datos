@@ -1,5 +1,6 @@
 package com.docencia.hotel.domain.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 import org.junit.jupiter.api.Assertions;
@@ -12,26 +13,29 @@ class BookingModelTest {
     private Booking booking;
     private Booking bookingId;
     private Booking bookingCompleto;
-    private Date fechaEntrada;
-    private Date fechaSalida;
+    private String fechaEntrada;
+    private String fechaSalida;
+    private Guest guest;
+    private Room room;
 
     @BeforeEach
     @Transactional
     void beforeEach() {
 
-        fechaSalida = java.sql.Date.valueOf("2025-09-25");
-        fechaEntrada = java.sql.Date.valueOf("2025-09-23");
-
+        fechaEntrada = LocalDate.of(2025, 9, 23);
+        fechaSalida = LocalDate.of(2025, 9, 25);
+        guest = new Guest();
+        room = new Room();
         booking = new Booking();
         bookingId = new Booking("3");
-        bookingCompleto = new Booking("3", fechaEntrada, fechaSalida);
+        bookingCompleto = new Booking("3", fechaEntrada, fechaSalida,guest,room);
     }
 
     @Test
     void modificarBookingTest() {
         booking.setId("5");
-        booking.setFechaEntrada(java.sql.Date.valueOf("2025-09-24"));
-        booking.setFechaSalida(java.sql.Date.valueOf("2025-09-27"));
+        booking.setFechaEntrada(LocalDate.of(2025, 9, 24));
+        booking.setFechaSalida(LocalDate.of(2025, 9, 27));
     }
 
     @Test

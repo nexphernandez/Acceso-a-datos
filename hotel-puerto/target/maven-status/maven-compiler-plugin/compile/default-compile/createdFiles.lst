@@ -1,4 +1,5 @@
 com/docencia/hotel/domain/model/Room.class
+com/docencia/hotel/persistence/jpa/BookingJpaRepository.class
 com/docencia/hotel/repository/jpa/IRoomJpaRepository.class
 com/docencia/hotel/repository/IRoomRepository.class
 com/docencia/hotel/persistence/jpa/GuestJpaRepository.class
@@ -10,6 +11,7 @@ com/docencia/hotel/repository/IHotelRepository.class
 com/docencia/hotel/domain/model/Hotel.class
 com/docencia/hotel/domain/model/Booking.class
 com/docencia/hotel/repository/IBookingRepository.class
+com/docencia/hotel/repository/jpa/IBookingJpaRepository.class
 com/docencia/hotel/Application.class
 com/docencia/hotel/persistence/jpa/HotelJpaRepository.class
 com/docencia/hotel/domain/model/Guest.class

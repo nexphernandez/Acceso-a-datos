@@ -1,5 +1,6 @@
 /home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/test/java/com/docencia/hotel/domain/model/GuestModelTest copy.java
 /home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/test/java/com/docencia/hotel/persistence/jpa/HotelJpaRepositoryTest.java
+/home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/test/java/com/docencia/hotel/persistence/jpa/GuestJpaRepositoryTest.java
 /home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/test/java/com/docencia/hotel/domain/model/RoomModelTest.java
 /home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/test/java/com/docencia/hotel/domain/model/HotelModelTest.java
 /home/dam/Descargas/Acceso-a-datos/hotel-puerto/src/test/java/com/docencia/hotel/domain/model/BookingModelTest.java

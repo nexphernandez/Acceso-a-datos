@@ -25,9 +25,27 @@ public class AlumnoEntity {
   
   private String ciclo;
 
+  /**
+   * Constructor vacio
+   */
   public AlumnoEntity() {
   }
 
+  /**
+   * Constructor con el atributi principal de la clase
+   * @param id id del alumno
+   */
+  public AlumnoEntity(Long id) {
+    this.id = id;
+  }
+
+  /**
+   * Constructor con los atributos de la clase AlumnoEntity
+   * @param id id del alumno
+   * @param nombre nombre del alumno
+   * @param email email del alumno
+   * @param ciclo ciclo del alumno
+   */
   public AlumnoEntity(Long id, String nombre, String email, String ciclo) {
     this.id = id;
     this.nombre = nombre;

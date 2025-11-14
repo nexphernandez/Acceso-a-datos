@@ -1,0 +1,8 @@
+/home/dam/Descargas/Acceso-a-datos/objetos-practica-starter/src/main/java/com/docencia/objetos/repo/AlumnoRepository.java
+/home/dam/Descargas/Acceso-a-datos/objetos-practica-starter/src/main/java/com/docencia/objetos/repo/AlumnoRepositoryJpaAdapter.java
+/home/dam/Descargas/Acceso-a-datos/objetos-practica-starter/src/main/java/com/docencia/objetos/service/AlumnoService.java
+/home/dam/Descargas/Acceso-a-datos/objetos-practica-starter/src/main/java/com/docencia/objetos/DemoApplication.java
+/home/dam/Descargas/Acceso-a-datos/objetos-practica-starter/src/main/java/com/docencia/objetos/config/H2ServerConfig.java
+/home/dam/Descargas/Acceso-a-datos/objetos-practica-starter/src/main/java/com/docencia/objetos/repo/jpa/AlumnoJpaRepository.java
+/home/dam/Descargas/Acceso-a-datos/objetos-practica-starter/src/main/java/com/docencia/objetos/repo/jpa/AlumnoEntity.java
+/home/dam/Descargas/Acceso-a-datos/objetos-practica-starter/src/main/java/com/docencia/objetos/domain/Alumno.java

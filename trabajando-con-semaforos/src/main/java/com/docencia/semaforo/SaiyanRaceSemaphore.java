@@ -25,12 +25,13 @@ public class SaiyanRaceSemaphore implements Runnable {
 
     /**
      * Constructor con el nombre
-     *
      * @param name nombre del saiyan
      */
     public SaiyanRaceSemaphore(String name) {
         this.name = name;
     }
+
+    
 
     @Override
     public void run() {

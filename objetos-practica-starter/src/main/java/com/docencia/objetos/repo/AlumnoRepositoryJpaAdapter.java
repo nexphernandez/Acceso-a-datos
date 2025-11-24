@@ -1,14 +1,15 @@
 package com.docencia.objetos.repo;
 
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.context.annotation.Profile;
+import org.springframework.stereotype.Repository;
+
 import com.docencia.objetos.domain.Alumno;
 import com.docencia.objetos.mapper.AlumnoMapperUtils;
 import com.docencia.objetos.repo.jpa.AlumnoEntity;
 import com.docencia.objetos.repo.jpa.AlumnoJpaRepository;
-import org.springframework.context.annotation.Profile;
-import org.springframework.stereotype.Repository;
-
-import java.util.List;
-import java.util.Optional;
 
 @Repository
 @Profile("h2")
@@ -54,5 +55,4 @@ public class AlumnoRepositoryJpaAdapter implements AlumnoRepository {
     return jpa.count();
   }
 
-  // TODO: métodos de mapeo toDomain/toEntity
 }

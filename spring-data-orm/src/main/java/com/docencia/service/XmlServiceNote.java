@@ -1,12 +1,9 @@
 package com.docencia.service;
 
-import java.util.List;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.docencia.model.Note;
-import com.fasterxml.jackson.databind.json.JsonMapper;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 
 public class XmlServiceNote extends ServiceNoteAbstracta {

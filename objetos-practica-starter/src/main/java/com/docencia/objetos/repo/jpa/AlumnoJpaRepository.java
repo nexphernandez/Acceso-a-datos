@@ -14,4 +14,6 @@ public interface AlumnoJpaRepository extends JpaRepository<AlumnoEntity, Long> {
    * @return true/false
    */
   boolean existsByEmail(String email);
+
+  
 }

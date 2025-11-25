@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Test set: com.docencia.objetos.repo.RolJsonFileRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.259 s <<< FAILURE! -- in com.docencia.objetos.repo.RolJsonFileRepositoryTest
+com.docencia.objetos.repo.RolJsonFileRepositoryTest.findByIdExistenteDevuelveRolTest -- Time elapsed: 0.182 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting Optional to contain a value but it was empty.
+	at com.docencia.objetos.repo.RolJsonFileRepositoryTest.findByIdExistenteDevuelveRolTest(RolJsonFileRepositoryTest.java:90)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+
+com.docencia.objetos.repo.RolJsonFileRepositoryTest.deleteByIdEliminaRolDelFicheroTest -- Time elapsed: 0.008 s <<< FAILURE!
+java.lang.AssertionError: 
+
+Expecting Optional to contain a value but it was empty.
+	at com.docencia.objetos.repo.RolJsonFileRepositoryTest.deleteByIdEliminaRolDelFicheroTest(RolJsonFileRepositoryTest.java:112)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+

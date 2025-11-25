@@ -1,15 +1,18 @@
 package com.docencia.objetos.repo;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.docencia.objetos.domain.Alumno;
+import com.docencia.objetos.domain.Rol;
+import com.docencia.objetos.mapper.AlumnoMapper;
+import com.docencia.objetos.repo.interfaces.AlumnoRepository;
+import com.docencia.objetos.repo.jpa.AlumnoEntity;
+import com.docencia.objetos.repo.jpa.AlumnoJpaRepository;
+import com.docencia.objetos.repo.jpa.RolEntity;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
-import com.docencia.objetos.domain.Alumno;
-import com.docencia.objetos.mapper.AlumnoMapperUtils;
-import com.docencia.objetos.repo.jpa.AlumnoEntity;
-import com.docencia.objetos.repo.jpa.AlumnoJpaRepository;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Repository
 @Profile("h2")
@@ -23,17 +26,18 @@ public class AlumnoRepositoryJpaAdapter implements AlumnoRepository {
 
   @Override
   public List<Alumno> findAll() {
-    return AlumnoMapperUtils.to(jpa.findAll());
+    return AlumnoMapper.to(jpa.findAll());
   }
 
   @Override
   public Optional<Alumno> findById(Long id) {
-    return AlumnoMapperUtils.to(jpa.findById(id));
+    if (jpa.findById(id).isEmpty()) return Optional.empty();
+    return Optional.of(AlumnoMapper.to(jpa.findById(id).get()));
   }
 
   @Override
   public Alumno save(Alumno alumno) {
-    return AlumnoMapperUtils.to(jpa.save(AlumnoMapperUtils.to(alumno)));
+    return AlumnoMapper.to(jpa.save(AlumnoMapper.to(alumno)));
   }
 
   @Override
@@ -43,11 +47,7 @@ public class AlumnoRepositoryJpaAdapter implements AlumnoRepository {
 
   @Override
   public void deleteById(Long id) {
-    jpa.delete(new AlumnoEntity(id));
-  }
-
-  public void deleteById(Alumno alumno) {
-    jpa.delete(AlumnoMapperUtils.to(alumno));
+    jpa.deleteById(id);
   }
 
   @Override

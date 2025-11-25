@@ -16,7 +16,7 @@ import com.docencia.hotel.domain.model.Booking;
 @Repository
 public interface IBookingJpaRepository extends JpaRepository<Booking, String> {
     
-    @Query("SELECT b FROM Booking b WHERE b.room.id = :roomId " +
+    @Query("SELECT b FROM Booking as b WHERE b.room.id = :roomId " +
            "AND b.fechaSalida > :startDate AND b.fechaEntrada < :endDate")
     List<Booking> findByRoomIdAndDateRange(
         @Param("roomId") String roomId, 

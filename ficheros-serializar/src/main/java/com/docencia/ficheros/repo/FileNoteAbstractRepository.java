@@ -23,7 +23,7 @@ public abstract class FileNoteAbstractRepository implements INotRepository {
     private String nameFile;
     private Path path;
     private final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
-    ObjectMapper mapper;
+    private ObjectMapper mapper;
 
     public FileNoteAbstractRepository(){}
 
@@ -35,15 +35,15 @@ public abstract class FileNoteAbstractRepository implements INotRepository {
     }
 
     private Path verificarFichero() {
-        URL resource;
-        resource = getClass().getClassLoader().getResource(nameFile);
+        URL resource = getClass().getClassLoader().getResource(nameFile);
         return Paths.get(resource.getPath());
     }
 
     private List<Note> readAllInternal() {
         try {
-            if (!Files.exists(path) || Files.size(path) == 0)
+            if (!Files.exists(path) || Files.size(path) == 0){
                 return new ArrayList<>();
+            }
             Note[] arrayNotes = mapper.readValue(Files.readAllBytes(path), Note[].class);
             return new ArrayList<>(Arrays.asList(arrayNotes));
         } catch (IOException e) {
@@ -53,8 +53,12 @@ public abstract class FileNoteAbstractRepository implements INotRepository {
 
     @Override
     public boolean exists(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'exists'");
+        Note note = new Note(id);
+        List<Note> notes = findAll();
+        if (notes.contains(note)) {
+            return  true;
+        }
+        return false;
     }
 
     @Override
@@ -101,7 +105,7 @@ public abstract class FileNoteAbstractRepository implements INotRepository {
         lock.writeLock().lock();
         try {
             List<Note> notes = findAll();
-            if (StringUtils.isEmpty(nameFile)){
+            if (StringUtils.isEmpty(note.getId())){
                 note.setId(UUID.randomUUID().toString());
             }
             notes.removeIf(n -> Objects.equals(n.getId(), note.getId()));
@@ -115,7 +119,18 @@ public abstract class FileNoteAbstractRepository implements INotRepository {
 
     @Override
     public boolean delete(String id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'delete'");
+        lock.writeLock().lock();
+        try {
+            List<Note> notes = findAll();
+            Note note = new Note(id);
+            if (!notes.contains(note)) {
+                return false;
+            }
+            notes.removeIf(n -> Objects.equals(n.getId(), id));
+            writeAllInternal(notes);
+            return true;
+        } finally {
+            lock.writeLock().unlock();
+        }
     }
 }

@@ -1,3 +1,11 @@
+com/docencia/personas/domain/Direccion.class
 com/docencia/personas/model/Direccion.class
 com/docencia/personas/PersonasApplication.class
+com/docencia/personas/service/implementation/RolService.class
 com/docencia/personas/model/Persona.class
+com/docencia/personas/service/implementation/PersonaService.class
+com/docencia/personas/model/Rol.class
+com/docencia/personas/domain/Persona.class
+com/docencia/personas/repository/RolRepository.class
+com/docencia/personas/service/IPersonaService.class
+com/docencia/personas/repository/PersonaRepository.class

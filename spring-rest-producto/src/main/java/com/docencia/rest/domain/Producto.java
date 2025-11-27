@@ -1,31 +1,24 @@
-package com.docencia.rest.modelo;
+package com.docencia.rest.domain;
 
 import java.math.BigDecimal;
 import java.util.Objects;
-
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
 
 /**
  * @author nexphernandez
  * @version 1.0.0
  */
-@Entity
-@Table(name = "productos")
+
 public class Producto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     private int id;
-    @Column(name = "nombre")
+
     private String nombre;
-    @Column(name = "precio")
+
     private BigDecimal precio;
-    @Column(name = "stock")
+
     private int stock;
+
+    private DetalleProducto detalleProducto;
 
     /**
      * Constructor vacio

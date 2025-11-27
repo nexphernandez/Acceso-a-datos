@@ -3,7 +3,7 @@ package com.docencia.rest.service.interfaces;
 import java.util.List;
 import java.util.Optional;
 
-import com.docencia.rest.modelo.Producto;
+import com.docencia.rest.modelo.ProductoEntity;
 /**
  * @author nexphernandez
  * @version 1.0.0
@@ -14,27 +14,27 @@ public interface ProductoServicesInterface {
      * @param id identificador del producto a buscar
      * @return Optional con el producto buscado/null
      */
-    Optional<Producto> findById(int id);
+    Optional<ProductoEntity> findById(int id);
 
     /**
      * Funcion que encuentra un producto
      * @param producto producto buscado
      * @return Optional con el producto buscado/null
      */
-    Optional<Producto> find(Producto producto);
+    Optional<ProductoEntity> find(ProductoEntity producto);
 
     /**
      * Funcion que busca todo los producto de la bbdd
      * @return lista con todo los productos
      */
-    List<Producto> findAll();
+    List<ProductoEntity> findAll();
 
     /**
      * Funcion que guarda un producto en la bbbd
      * @param producto producto a aniadir
      * @return devuelve el producto guardado/null
      */
-    Producto save(Producto producto);
+    ProductoEntity save(ProductoEntity producto);
 
     /**
      * Funcion que borra un producto de la bbd sabiendo su id
@@ -48,5 +48,5 @@ public interface ProductoServicesInterface {
      * @param producto producto a eliminar
      * @return true/false
      */
-    boolean delete(Producto producto);
+    boolean delete(ProductoEntity producto);
 }

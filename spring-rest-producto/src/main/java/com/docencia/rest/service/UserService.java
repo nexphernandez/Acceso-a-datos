@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 import com.docencia.rest.exeception.ResourceNotFoundException;
 import com.docencia.rest.modelo.User;
-import com.docencia.rest.repository.UserRepository;
+import com.docencia.rest.repository.interfaces.UserRepository;
 import com.docencia.rest.service.interfaces.UserServicesInterface;
 
 import io.swagger.v3.oas.annotations.parameters.RequestBody;

@@ -10,7 +10,6 @@ import com.docencia.rest.modelo.DetalleProductoDocument;
  * @version 1.0.0
  */
 public interface IDetalleProductoRepository extends MongoRepository<DetalleProductoDocument, Integer>{
-    /* Optional<DetalleProductoDocument> findByProductoId(int productoId);
-    DetalleProductoDocument save(int productoId, DetalleProductoDocument detalle);
-    boolean deleteByProductoId(int productoId); */
+    Optional<DetalleProductoDocument> findByProductoId(int productoId);
+    boolean deleteByProductoId(int productoId);
 }

@@ -101,4 +101,8 @@ public class ProductoEntity {
         return id == other.id;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
 }

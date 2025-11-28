@@ -3,7 +3,6 @@ package com.docencia.rest.domain;
 import java.util.List;
 import java.util.Map;
 
-import org.springframework.data.annotation.Id;
 import java.util.Objects;
 
 

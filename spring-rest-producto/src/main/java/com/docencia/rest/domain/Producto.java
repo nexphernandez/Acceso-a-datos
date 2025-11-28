@@ -39,6 +39,16 @@ public class Producto {
         this.stock = stock;
     }
 
+    
+
+    public Producto(int id, String nombre, BigDecimal precio, int stock, DetalleProducto detalleProducto) {
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.stock = stock;
+        this.detalleProducto = detalleProducto;
+    }
+
     /**
      * Constructor con el identificador de la producto
      * 
@@ -46,6 +56,18 @@ public class Producto {
      */
     public Producto(int id) {
         this.id = id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public DetalleProducto getDetalleProducto() {
+        return detalleProducto;
+    }
+
+    public void setDetalleProducto(DetalleProducto detalleProducto) {
+        this.detalleProducto = detalleProducto;
     }
 
     public int getId() {

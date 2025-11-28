@@ -2,6 +2,7 @@ package com.docencia.rest.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -30,7 +31,7 @@ public class ProductoService implements ProductoServicesInterface {
     }
 
     @Autowired
-    public void setDetalleProductoDocument(IDetalleProductoRepository detalleProductoRepository) {
+    public void setDetalleProductoRepository(IDetalleProductoRepository detalleProductoRepository) {
         this.detalleProductoRepository = detalleProductoRepository;
     }
 
@@ -46,8 +47,16 @@ public class ProductoService implements ProductoServicesInterface {
 
     @Override
     public Optional<Producto> findById(int id) {
-        return null;
-        // return productoRepository.findById(id);
+        Optional<ProductoEntity> entityOpt = productoRepository.findById(id);
+        if (entityOpt.isEmpty()) {
+            return Optional.empty();
+        }
+
+        ProductoEntity entity = entityOpt.get();
+        DetalleProductoDocument detalleDoc = detalleProductoRepository.findByProductoId(id).get();
+
+        Producto producto = productoMapper.toDomain(entity, detalleDoc);
+        return Optional.of(producto);
     }
 
     @Override
@@ -57,8 +66,15 @@ public class ProductoService implements ProductoServicesInterface {
 
     @Override
     public List<Producto> findAll() {
-        return null;
-        // return productoRepository.findAll();
+         List<ProductoEntity> entities = productoRepository.findAll();
+
+        return entities.stream()
+                .map(entity -> {
+                    DetalleProductoDocument detalleDoc =
+                            detalleProductoRepository.findByProductoId(entity.getId()).orElse(null);
+                    return productoMapper.toDomain(entity, detalleDoc);
+                })
+                .collect(Collectors.toList());
     }
 
     @Override
@@ -96,4 +112,5 @@ public class ProductoService implements ProductoServicesInterface {
         return true;
     }
 
+    
 }

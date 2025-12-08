@@ -14,7 +14,9 @@ import jakarta.persistence.Id;
 public class GuestPreferences {
 
     @Id
-    private String guestId ;
+    private String id;
+
+    private Long guestId ;
 
     private String preferredLanguage; 
 
@@ -34,6 +36,7 @@ public class GuestPreferences {
 
     /**
      * Cosntructor con todos los atributos de la clase
+     * @param id identificador de la clase GuestReference
      * @param guestId id del guest
      * @param preferredLanguage leguaje de preferecia del guest
      * @param newsletterOptIn si tiene preferencia a recibir el preiodico
@@ -41,7 +44,8 @@ public class GuestPreferences {
      * @param favoriteRoomType tipo de habitacion favorita del guest
      * @param notes notas del guest
      */
-    public GuestPreferences(String guestId, String preferredLanguage, boolean newsletterOptIn, List<String> tags, String favoriteRoomType, String notes) {
+    public GuestPreferences(String id,Long guestId, String preferredLanguage, boolean newsletterOptIn, List<String> tags, String favoriteRoomType, String notes) {
+        this.id = id;
         this.guestId = guestId;
         this.preferredLanguage = preferredLanguage;
         this.newsletterOptIn = newsletterOptIn;
@@ -54,15 +58,15 @@ public class GuestPreferences {
      * Constructor con el identificardor de la clase
      * @param guestId identificador del guest
      */
-    public GuestPreferences(String guestId) {
+    public GuestPreferences(Long guestId) {
         this.guestId = guestId;
     }
 
-    public String getGuestId() {
+    public Long getGuestId() {
         return this.guestId;
     }
 
-    public void setGuestId(String guestId) {
+    public void setGuestId(Long guestId) {
         this.guestId = guestId;
     }
 

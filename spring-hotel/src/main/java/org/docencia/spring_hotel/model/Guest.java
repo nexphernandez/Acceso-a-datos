@@ -21,7 +21,7 @@ public class Guest {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private String id;
+    private Long id;
     @Column(name = "nombreCompleto")
     private String nombreCompleto;
     @Column(name = "email")
@@ -50,7 +50,7 @@ public class Guest {
      * @param preferences preferencias del guest
      * @param booking booking del guest
      */
-    public Guest(String id, String nombreCompleto, String email, String telefono, GuestPreferences preferences, Booking booking) {
+    public Guest(Long id, String nombreCompleto, String email, String telefono, GuestPreferences preferences, Booking booking) {
         this.id = id;
         this.nombreCompleto = nombreCompleto;
         this.email = email;
@@ -63,15 +63,15 @@ public class Guest {
      * Contructor con la identificador de la clase
      * @param id identificador de guest
      */
-    public Guest(String id) {
+    public Guest(Long id) {
         this.id = id;
     }
 
-    public String getId() {
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

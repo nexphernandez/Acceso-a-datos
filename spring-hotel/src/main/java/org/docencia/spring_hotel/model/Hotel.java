@@ -18,7 +18,7 @@ public class Hotel {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
-    private String id;
+    private Long id;
 
     @Column(name="nombre")
     private String nombre;
@@ -42,7 +42,7 @@ public class Hotel {
      * @param direccion direccion del hotel
      * @param habitaciones habitaciones del hotel
      */
-    public Hotel(String id, String nombre, String direccion, List<Room> habitaciones) {
+    public Hotel(Long id, String nombre, String direccion, List<Room> habitaciones) {
         this.id = id;
         this.nombre = nombre;
         this.direccion = direccion;
@@ -53,15 +53,15 @@ public class Hotel {
      * Contructor con la identificador de la clase
      * @param id identificador del hotel
      */
-    public Hotel(String id) {
+    public Hotel(Long id) {
         this.id = id;
     }
 
-    public String getId() {
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

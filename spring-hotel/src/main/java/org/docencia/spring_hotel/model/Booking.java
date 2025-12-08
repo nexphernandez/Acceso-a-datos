@@ -19,7 +19,7 @@ public class Booking {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
-    private String id;
+    private Long id;
     @Column(name="fechaEntrada")
     private LocalDate fechaEntrada; 
     @Column(name="fechaSalida")
@@ -44,7 +44,7 @@ public class Booking {
      * Contructor con la identificador de la clase
      * @param id identificador de bokings
      */
-    public Booking(String id) {
+    public Booking(Long id) {
         this.id = id;
     }
 
@@ -56,7 +56,7 @@ public class Booking {
      * @param room room de la clase booking
      * @param guest guest de la clase booking
      */
-    public Booking(String id, LocalDate fechaEntrada, LocalDate fechaSalida, Room room, Guest guest) {
+    public Booking(Long id, LocalDate fechaEntrada, LocalDate fechaSalida, Room room, Guest guest) {
         this.id = id;
         this.fechaEntrada = fechaEntrada;
         this.fechaSalida = fechaSalida;
@@ -64,11 +64,11 @@ public class Booking {
         this.guest = guest;
     }
 
-    public String getId() {
+    public Long getId() {
         return this.id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

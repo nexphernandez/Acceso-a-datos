@@ -2,7 +2,7 @@ import {
     crearTarea,
     completarTarea,
     filtrarTareas,
-  } from "../src/tareas";
+  } from "../src/modelos/tareas";
   
   describe("Funciones de tareas", () => {
     test("crearTarea crea una tarea no completada", () => {
